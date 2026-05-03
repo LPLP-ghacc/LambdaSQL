@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LambdaSQL — Web UI</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">λ SQL</span>
+        <span class="logo-sub">LambdaSQL</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Tables</div>
+        <ul id="table-list" class="table-list">
+          <li class="empty-hint">Loading...</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn btn-ghost btn-sm" id="btn-refresh-tables">↻ Refresh</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar-title" id="topbar-title">Query Editor</div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-sm" id="btn-new-table">+ New Table</button>
+        </div>
+      </header>
+
+      <!-- SQL Editor -->
+      <section class="editor-section">
+        <div class="editor-toolbar">
+          <button class="btn btn-primary" id="btn-run">▶ Run</button>
+          <button class="btn btn-ghost btn-sm" id="btn-clear">Clear</button>
+          <span class="editor-hint">Ctrl+Enter to run</span>
+          <span class="status-badge" id="status-badge"></span>
+        </div>
+        <div class="editor-wrap">
+          <textarea id="sql-editor" class="sql-editor" spellcheck="false"
+            placeholder="-- Write SQL here&#10;select * from users limit 100"></textarea>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="results-section">
+        <div class="results-toolbar">
+          <span class="results-label" id="results-label">Results</span>
+          <span class="results-count" id="results-count"></span>
+          <button class="btn btn-ghost btn-sm" id="btn-export" style="display:none">↓ CSV</button>
+        </div>
+        <div id="results-container" class="results-container">
+          <div class="results-empty">Run a query to see results</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal: New Table -->
+  <div class="modal-overlay" id="modal-new-table" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <span>Create Table</span>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Table name</label>
+          <input type="text" id="new-table-name" class="input" placeholder="users" />
+        </div>
+        <div class="form-group">
+          <label>Columns</label>
+          <div id="columns-list"></div>
+          <button class="btn btn-ghost btn-sm mt-8" id="btn-add-column">+ Add column</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-cancel-table">Cancel</button>
+        <button class="btn btn-primary" id="btn-create-table">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Insert Row -->
+  <div class="modal-overlay" id="modal-insert-row" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <span id="insert-modal-title">Insert Row</span>
+        <button class="modal-close" id="insert-modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="insert-form-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-cancel-insert">Cancel</button>
+        <button class="btn btn-primary" id="btn-confirm-insert">Insert</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Row -->
+  <div class="modal-overlay" id="modal-edit-row" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <span>Edit Row</span>
+        <button class="modal-close" id="edit-modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="edit-form-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-cancel-edit">Cancel</button>
+        <button class="btn btn-danger" id="btn-delete-row">Delete</button>
+        <button class="btn btn-primary" id="btn-confirm-edit">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/tables.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
