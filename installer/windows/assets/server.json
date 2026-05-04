@@ -1,0 +1,6 @@
+{
+  "Host": "0.0.0.0",
+  "Port": 5464,
+  "DataDir": "data",
+  "MaxConns": 256
+}

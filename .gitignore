@@ -3,3 +3,12 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+# Installer output
+installer/dist/
+*.exe
+*.msi
+
+# Data directories
+data/
+/var/lambdasql/
