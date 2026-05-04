@@ -1,4 +1,5 @@
 # LambdaSQL
+<img width="163" height="192" alt="λSQL_SMALL_LOGO" src="https://github.com/user-attachments/assets/8682f264-cd7b-4d8d-ac61-3a135387fcaa" />
 
 A lightweight, self-contained relational database engine written entirely in C#.
 LambdaSQL runs natively on **Windows** and **Linux**, requires no external dependencies,
