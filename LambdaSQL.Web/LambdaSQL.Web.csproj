@@ -5,6 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>lambdasql-web</AssemblyName>
+        <ApplicationIcon>λSQL_SMALL_LOGO.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>

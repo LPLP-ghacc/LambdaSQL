@@ -8,6 +8,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Optimize>true</Optimize>
         <AssemblyName>lambdasql-server</AssemblyName>
+        <ApplicationIcon>λSQL_SMALL_LOGO.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>

@@ -5,6 +5,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <ApplicationIcon>λSQL_SMALL_LOGO.ico</ApplicationIcon>
     </PropertyGroup>
 
 </Project>
