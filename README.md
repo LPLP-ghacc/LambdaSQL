@@ -551,9 +551,7 @@ inner join products as p     on oi.product_id = p.id;
 ```
 
 Table aliases are optional but recommended.
-```
 
----
 
 ## 5. Embedded Mode
 
